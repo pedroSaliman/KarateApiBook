@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Features\/first[1:8]","start":1657019038881,"end":1657019042542,"title":"src\/test\/java\/Features\/first[1:8] 13:03:58.881-13:04:02.542 First Test"},{"id":2,"group":1,"content":"src\/test\/java\/Features\/first[2:14]","start":1657019042549,"end":1657019043873,"title":"src\/test\/java\/Features\/first[2:14] 13:04:02.549-13:04:03.873 Get Books Test"},{"id":3,"group":1,"content":"src\/test\/java\/Features\/first[3:29]","start":1657019043885,"end":1657019045275,"title":"src\/test\/java\/Features\/first[3:29] 13:04:03.885-13:04:05.275 Post orders Test"},{"id":4,"group":1,"content":"src\/test\/java\/Features\/first[4:37]","start":1657019045279,"end":1657019046646,"title":"src\/test\/java\/Features\/first[4:37] 13:04:05.279-13:04:06.646 Get orders Test"},{"id":5,"group":1,"content":"src\/test\/java\/Features\/first[5:45]","start":1657019046662,"end":1657019047580,"title":"src\/test\/java\/Features\/first[5:45] 13:04:06.662-13:04:07.580 Put orders Test"},{"id":6,"group":1,"content":"src\/test\/java\/Features\/first[6:56]","start":1657019047592,"end":1657019048327,"title":"src\/test\/java\/Features\/first[6:56] 13:04:07.592-13:04:08.327 Get orders Test"},{"id":7,"group":1,"content":"src\/test\/java\/Features\/first[7:67]","start":1657019048344,"end":1657019049211,"title":"src\/test\/java\/Features\/first[7:67] 13:04:08.344-13:04:09.211 Delete orders Test"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
